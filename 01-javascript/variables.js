@@ -63,13 +63,40 @@ if(-1){
 }else{
     console.log("Es Falso");
 }
-if(0){
+if(null){
     console.log("Es truty");
 }else{
     console.log("Es Falso"); // Truty
 }
-if(1){
+if(undefined){
     console.log("Es truty"); // Falsy
 }else{
     console.log("Es Falso");
-}}
+}
+
+//Orden de Importancia
+// 1) "const"
+// 2) "let"
+//3) X -> "var"
+
+//Objetos Js (JSON) -Arreglos
+
+const lilly= {
+    nombre: "Lilly", // llave: valor,
+    "apellido": 'Aviles',
+    edad: 24,
+    hijos: null,
+    zapatos: undefined,
+    casado: false,
+    ropa:{
+        color: 'plomo',
+        talla: '40',
+    },
+    mascotas: ['Cachetes', 'Pequitas','Panda']
+}; // object
+lilly.nombre;//"Lilly"
+lilly.apellido; //"Aviles"
+const  arregloNumeros = []; //object
+
+console.log(lilly);
+console.log(arregloNumeros);
