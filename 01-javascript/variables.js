@@ -93,10 +93,71 @@ const lilly= {
         talla: '40',
     },
     mascotas: ['Cachetes', 'Pequitas','Panda']
+   // sueldo:1.2,
+    //gastos: 0.8
 }; // object
+
+//ACCEDER A LAS PROPIEDADES DEL OBJETO
 lilly.nombre;//"Lilly"
 lilly.apellido; //"Aviles"
-const  arregloNumeros = []; //object
+lilly["nombre"];
+console.log(lilly);
+lilly.nombre="Dariana";
+console.log(lilly);
+//SI DESEO AGRAGAR UNA NUEVA PROPIEDAD DE UN OBJETO
+lilly.sueldo;//UNDEFINED
+console.log(lilly.sueldo);//UNDEFINED
+lilly.sueldo=1.2;
+console.log(lilly.sueldo);//1.2
+lilly["gastos"]=0.8;
+console.log(lilly.gastos);//0.8
+lilly.nombre=undefined;
+console.log(lilly);
+//console.log(Object.keys(lilly));
+delete lilly.nombre; //ELIMINAR LA LLAVE: "NOMBRE"
+console.log(Object.keys(lilly));
+console.log(Object.values(lilly));
+
+//LISTA DE VARIABLES POR VALOR EN JS
+//number
+//string
+//boolean
+//undefined
+let edadLilly = 24;
+let edadDariana=edadLilly;
+console.log(edadLilly); //24
+console.log(edadDariana);//24
+edadLilly=edadLilly+1;
+console.log(edadLilly);//25
+console.log(edadDariana);//25
+
+
+//LISTA DE VARIABLES POR REFERENCIA EN JS
+let rafael = {
+    nombre: "Rafael"
+};
+/*let lenin= rafael;
+console.log(rafael);
+console.log(lenin);
+lenin.nombre="Lenin";
+console.log(rafael);
+console.log(lenin);
+delete  rafael.nombre;
+console.log(rafael);
+console.log(lenin);*/
+
+//COMO CLONAR A RAFAEL
+let lenin = Object.assign({},rafael);
+// let lenin = Object.assign({},rafael);
+console.log(rafael);
+console.log(lenin);
+lenin.nombre = "Lenin";
+delete rafael.nombre;
+console.log(rafael);
+console.log(lenin);
+
+
+/*const  arregloNumeros = []; //object
 
 console.log(lilly);
-console.log(arregloNumeros);
+console.log(arregloNumeros);*/
