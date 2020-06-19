@@ -107,11 +107,34 @@ console.log('respuestaMap', respuestaMap);
 console.log('arreglo', arreglo);
 
 
-const respuestaMapNuevo = arreglo
+/*const respuestaMapNuevo = arreglo
     .map(
         function (valorActual, indiceActual, arregloCompleto) {
             return valorActual.nota;
         }
     );
 console.log('respuestaMapNuevo', respuestaMapNuevo);
+console.log('arreglo', arreglo);*/
+
+const respuestaMapNuevo = arreglo
+    .map(
+        // Funcion Anonima -> NO TIENE NOMBRE
+        // Funcion de flecha GORDA
+        (valorActual, indiceActual, arregloCompleto) => {
+            return valorActual.nota;
+        }
+    );
+console.log('respuestaMapNuevo', respuestaMapNuevo);
 console.log('arreglo', arreglo);
+
+
+
+// FILTER
+// devolver EXPRESION TRUTY FALSY
+const respuestaFilter = arreglo
+    .filter(
+        (valorActual, indiceActual, arregloCompleto) => {
+            return valorActual.nota >= 14;
+        }
+    );
+console.log('respuestaFilter', respuestaFilter);
