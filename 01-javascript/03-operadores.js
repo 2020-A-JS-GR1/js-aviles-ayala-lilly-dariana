@@ -138,3 +138,30 @@ const respuestaFilter = arreglo
         }
     );
 console.log('respuestaFilter', respuestaFilter);
+console.log('arreglo', arreglo);
+
+// SOME -> expresion
+// DEVUELVE BOOLEANO
+// Hay ALGUNA nota menor a nueve? SI NO
+// OR
+const respuestaSome = arreglo
+    .some(
+        (valorActual, indiceActual, arregloCompleto) => {
+            return valorActual.nota < 9;
+        }
+    );
+console.log('respuestaSome', respuestaSome);
+
+
+// EVERY -> expresion
+// DEVUELVE BOOLEANO
+// TODAS las notas son mayores a 14? SI NO
+// AND
+
+const respuestaEvery = arreglo
+    .every(
+        (valorActual, indiceActual, arregloCompleto) => {
+            return valorActual.nota > 14;
+        }
+    );
+console.log('respuestaEvery', respuestaEvery);
