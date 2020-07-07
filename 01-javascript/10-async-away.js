@@ -1,8 +1,23 @@
 //10-async-away.js
-const promesaLeerArchivo = new Promise();
-const promesaEscribirArchivo=new Promise();
+const promesaLeerArchivo = ()=>{ return new Promise(
+    (res,rej)=> {
+        //res('CONTENIDO LEER ARCHIVO')
+        res('contenido leer archivo')
+    }
+);
+}
 
-function ejercicio() {
+const promesaEscribirArchivo= ()=> {
+   return new Promise(
+        (res, rej) => {
+            //res('CONTENIDO LEER ARCHIVO')
+         //   res('contenido escribir archivo')
+            rej('ERROR =(')
+        }
+    );
+}
+
+//function ejercicio() {
 //regla async y away usar dentro de funciones (anónimas, con nobre y flecha gorda/
     // cuando se usa await siempre poner bloque try y catch
 // ESTO NO ES POSIBLE
@@ -15,10 +30,12 @@ function ejercicio() {
         try {
             console.log('2');
             const contenidoArchivoActual = await promesaLeerArchivo();
+            console.log(contenidoArchivoActual);
             console.log('3');
             await promesaEscribirArchivo();
             console.log('4');
             const nuevoContenido = await promesaLeerArchivo();
+            console.log(nuevoContenido);
             console.log('5');
         } catch (error) {
             console.error(error);
@@ -26,9 +43,12 @@ function ejercicio() {
         console.log('6');
         console.log('7');
     }
-
-    const f = async () => {
+    const respuestaEjercicio = ejercicio();
+    //console.log('respuestaEjercicio',respuestaEjercicio);
+    console.log('promesaLeerArchivo',promesaLeerArchivo());
+   // console.log('promesaEscribirArchivo',promesaEscribirArchivo());
+   // const f = async () => {
         // contenido
-    }
+   // }
 
-}
+//}
