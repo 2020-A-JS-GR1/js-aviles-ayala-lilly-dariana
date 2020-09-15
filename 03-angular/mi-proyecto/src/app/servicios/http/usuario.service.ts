@@ -20,4 +20,23 @@ export class UsuarioService {
   traerTodos() {
     return this._httpClient.get(this.url + "/Usuario") // Petición
   }
+
+  //POST / Crear Usuario
+  crear(usuario){
+    return this._httpClient.post(
+      this.url + "/Usuario", // URL
+      usuario
+    )
   }
+
+  obtenerUnoPorId(idUsuario: number){
+    return this._httpClient.get(this.url + '/Usuario/'+ idUsuario)
+  }
+
+  eliminar(idUsuario: number){
+    return this._httpClient.delete(
+      this.url + '/Usuario/' + idUsuario
+    )
+  }
+
+}

@@ -8,6 +8,9 @@ import {UsuarioService} from "./servicios/http/usuario.service";
 })
 export class AppComponent {
   title = 'mi-proyecto';
+  habilitado = true;
+
+
   arregloPeliculas = [
     {
       id: 1,
@@ -30,6 +33,9 @@ export class AppComponent {
   ]
 
   arregloNumeros = [1, 2, 3]
+  arregloUsuarios = [];
+  arregloObservables = [];
+
 
   // Inyectando dependencias en el componente principal
   constructor(
@@ -41,13 +47,35 @@ export class AppComponent {
     console.log("Llego el evento", objeto);
     const observableTraerTodos = this._usuarioService.traerTodos()
     observableTraerTodos.subscribe(
-      (data) => { // THEN
+      (data) => { // THEN TRY
+        this.arregloUsuarios = data as any[]
         console.log(data)
       },
       (error) => { // CATCH
         console.log(error)
+
       }
     )
   }
+
+  crearUsuario() {
+    const usuarioNuevo = {
+      cedula: '123456789555',
+      nombre: 'Naruto',
+      apellido: 'Uzumaki'
+    };
+    const observableCrearUsuario = this._usuarioService.crear(usuarioNuevo)
+    observableCrearUsuario.subscribe(
+      (datos) => { // THEN TRY
+        console.log('Nuevo usuario: ', datos)
+        // Para popular una tabla, volver a llamar al backend de nuevo
+        this.mensajeConsola(true)
+      },
+      (error) => { // CATCH
+        console.log('Error',error)
+      }
+    )
+  }
+
 }
 

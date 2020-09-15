@@ -27,14 +27,17 @@ export class CartaPeliculaComponent implements OnInit, OnDestroy {
    textoEjemplo = 'Lilly';
   linkTextoEjemplo = 'https://www.google.com.ec'
 
-  constructor() { }
+  constructor() {
+    console.log("Constructor")
+  }
 
   ngOnInit(): void {
-
+    console.log("INIT")
   }
 
   ngOnDestroy(): void {
-
+    console.log("Destroy")
+    // Aquí se desuscriben todas las suscripciones.
   }
   ejemploFuncion() {
     alert('HOLA..!!')

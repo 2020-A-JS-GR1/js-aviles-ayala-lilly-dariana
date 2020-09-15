@@ -1,26 +1,44 @@
-<h1>Lista de películas</h1>
+<!--<h1>Lista de películas</h1>-->
 
-<!-- Directiva - NGFOR -->
-<p *ngFor="let numero of arregloNumeros">
-  {{numero}}</p>
+<!--&lt;!&ndash; Directiva - NGFOR &ndash;&gt;-->
+<!--<p *ngFor="let numero of arregloNumeros">-->
+<!--  {{numero}}</p>-->
 
-<!-- Directiva ngIf -->
-<p *ngIf="false">
-  OCULTO
-</p>
+<!--&lt;!&ndash; Directiva ngIf &ndash;&gt;-->
+<!--<p *ngIf="false">-->
+<!--  OCULTO-->
+<!--</p>-->
 
 
-<div *ngFor="let pelicula of arregloPeliculas">
-<app-carta-pelicula
+<!--<div *ngFor="let pelicula of arregloPeliculas">-->
+<!--<app-carta-pelicula-->
 
-  [urlImagen]="pelicula.url"
-  [descripcion]="pelicula.descripcion"
-  [nombreBoton]="pelicula.nombrePelicula"
-  (eventoDioClicEnBoton)="mensajeConsola($event)"
-  (eventoDioClicEnImagen)="mensajeConsola($event)"
->
+<!--  [urlImagen]="pelicula.url"-->
+<!--  [descripcion]="pelicula.descripcion"-->
+<!--  [nombreBoton]="pelicula.nombrePelicula"-->
+<!--  (eventoDioClicEnBoton)="mensajeConsola($event)"-->
+<!--  (eventoDioClicEnImagen)="mensajeConsola($event)"-->
+<!--&gt;-->
+<!--</app-carta-pelicula>-->
+<!--</div>-->
+
+<!--<button (click)="crearUsuario()">-->
+<!--  Crear usuario-->
+<!--</button>-->
+
+<button (click)="habilitado = !habilitado">
+  {{habilitado ? 'Habilitado' : 'Deshabilitado'}}
+</button>
+
+<app-carta-pelicula *ngIf="habilitado">
 </app-carta-pelicula>
+
+<div *ngFor="let usuario of arregloUsuarios">
+  {{usuario.nombre}}
 </div>
+<br><br>
+
+
 
 <!--
 <br>
