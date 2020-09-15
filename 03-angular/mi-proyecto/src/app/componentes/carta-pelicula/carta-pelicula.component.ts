@@ -33,11 +33,12 @@ export class CartaPeliculaComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     console.log("INIT")
+    //LOGICA INICIAL DEL COMPONENTE
   }
 
   ngOnDestroy(): void {
     console.log("Destroy")
-    // Aquí se desuscriben todas las suscripciones.
+    // SE DESUSCRIBE DE TODAS LAS SUSCRIPCIONES
   }
   ejemploFuncion() {
     alert('HOLA..!!')

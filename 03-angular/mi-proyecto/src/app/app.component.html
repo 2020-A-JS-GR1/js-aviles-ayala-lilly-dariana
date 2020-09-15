@@ -26,19 +26,36 @@
 <!--  Crear usuario-->
 <!--</button>-->
 
-<button (click)="habilitado = !habilitado">
-  {{habilitado ? 'Habilitado' : 'Deshabilitado'}}
-</button>
+<!--<button (click)="habilitado = !habilitado">-->
+<!--  {{habilitado ? 'Habilitado' : 'Deshabilitado'}}-->
+<!--</button>-->
 
-<app-carta-pelicula *ngIf="habilitado">
-</app-carta-pelicula>
+<!--<app-carta-pelicula *ngIf="habilitado">-->
+<!--</app-carta-pelicula>-->
 
 <div *ngFor="let usuario of arregloUsuarios">
   {{usuario.nombre}}
 </div>
-<br><br>
+<br>
+<ul>
+  <li>
+    <a [routerLink]="['inicio']">
+      Ir Inicio
+    </a>
+  </li>
+  <li>
+    <a [routerLink]="['login']">
+      Ir Login
+    </a>
+  </li>
+  
+</ul>
 
 
+
+<router-outlet>
+
+</router-outlet>
 
 <!--
 <br>
