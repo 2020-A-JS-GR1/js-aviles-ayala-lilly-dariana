@@ -16,6 +16,11 @@ export class CartaPeliculaComponent implements OnInit, OnDestroy {
   nombreBoton: string
 
 
+  @Output()
+  eventoDioClicEnBoton: EventEmitter<boolean> = new EventEmitter<boolean>()
+
+  @Output()
+  eventoDioClicEnImagen: EventEmitter<boolean> = new EventEmitter<boolean>()
 
   // Valores a mostrar con interpolación y/o property binding
   urlEjemploImagen = 'https://pbs.twimg.com/profile_images/727652546093813761/wsIRWa4h.jpg';
@@ -39,5 +44,11 @@ export class CartaPeliculaComponent implements OnInit, OnDestroy {
     console.log('Blur')
   }
 
+  ejecutarEventoDioClic() {
+    this.eventoDioClicEnBoton.emit(true);
+  }
 
+  ejecutarEventoDioClicImagen() {
+    this.eventoDioClicEnImagen.emit(true)
+  }
 }

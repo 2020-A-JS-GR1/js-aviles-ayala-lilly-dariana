@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {UsuarioService} from "./servicios/http/usuario.service";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,46 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'mi-proyecto';
+  arregloPeliculas = [
+    {
+      id: 1,
+      url: "https://es.web.img3.acsta.net/medias/nmedia/18/84/87/96/19769123.jpg",
+      descripcion: 'Arriety es un ser diminuto que por su curiosidad revela su existencia, teniendo que afrontar graves peligros para sobrevivir ',
+      nombrePelicula: 'Arriety y el mundo de los diminutos'
+    },
+    {
+      id: 2,
+      url: "https://es.web.img2.acsta.net/pictures/16/02/08/12/58/542941.jpg",
+      descripcion: 'Anna, una chica solitaria y curiosa, decide explorar una vieja mansión abandonada y se encuentra con una chica rubia misteriosa que sólo ella puede ver',
+      nombrePelicula: 'Los recuerdos de Marnie'
+    },
+    {
+      id: 3,
+      url: "https://i2.wp.com/concdecultura.com/wp-content/uploads/2020/01/NinoKuni-netflix-concdecultura10.jpg?fit=739%2C715&amp;ssl=1",
+      descripcion: 'Yuu y Haru mejores amigos desde la infancia viajan entre el mundo real y un universo de fantasía paralelo para ayudar a su amiga Kotona, cuya vida está en peligro',
+      nombrePelicula: 'NiNoKuni'
+    }
+  ]
+
+  arregloNumeros = [1, 2, 3]
+
+  // Inyectando dependencias en el componente principal
+  constructor(
+    private readonly _usuarioService: UsuarioService
+  ) {
+  }
+
+  mensajeConsola(objeto: boolean) {
+    console.log("Llego el evento", objeto);
+    const observableTraerTodos = this._usuarioService.traerTodos()
+    observableTraerTodos.subscribe(
+      (data) => { // THEN
+        console.log(data)
+      },
+      (error) => { // CATCH
+        console.log(error)
+      }
+    )
+  }
 }
+
