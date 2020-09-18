@@ -33,9 +33,10 @@
 <!--<app-carta-pelicula *ngIf="habilitado">-->
 <!--</app-carta-pelicula>-->
 
-<div *ngFor="let usuario of arregloUsuarios">
-  {{usuario.nombre}}
-</div>
+<!--<div *ngFor="let usuario of arregloUsuarios">-->
+<!--  {{usuario.nombre}}-->
+<!--</div>-->
+
 <br>
 <ul>
   <li>
@@ -48,9 +49,13 @@
       Ir Login
     </a>
   </li>
-  
-</ul>
+  <li>
+    <a [routerLink]="['usuario']">
+      Usuarios
+    </a>
+  </li>
 
+</ul>
 
 
 <router-outlet>
