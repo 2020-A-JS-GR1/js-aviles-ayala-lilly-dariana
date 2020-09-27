@@ -17,14 +17,20 @@ export class UsuarioService {
 
   }
 
-  traerTodos() {
-    return this._httpClient.get(this.url + "/Usuario") // Petición
+  traerTodos(consulta?: string) {
+    return this._httpClient.get(this.url + "/Usuario?" + consulta) // Petición
   }
 
   //POST / Crear Usuario
   crear(usuario){
     return this._httpClient.post(
       this.url + "/Usuario", // URL
+      usuario
+    )
+  }
+  editar(usuario, id) {
+    return this._httpClient.put(
+      this.url + '/Usuario/' + id, // URL
       usuario
     )
   }

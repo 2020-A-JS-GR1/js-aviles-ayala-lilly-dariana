@@ -10,14 +10,19 @@ import {Router} from "@angular/router";
 export class RutaListaUsuarioComponent implements OnInit {
 
   arregloUsuarios = [];
+  busquedaModelo = '';
 
-  constructor( // inyecta dependencias
+  constructor( // Inyecta dependendicas
     private readonly _usuarioService: UsuarioService,
     private readonly _router: Router
-  ) { }
-  irAEditarUsuario(id: number){
-    const ruta = ['/usuario', 'editar', id]
-    //  /usuario/editar/1
+  ) {
+
+  }
+
+
+  irAEditarUsuario(id: number) {
+    const ruta = ['/usuario', 'editar', id];
+    // /usuario/editar/1
     this._router.navigate(ruta);
   }
 
@@ -39,7 +44,28 @@ export class RutaListaUsuarioComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const observableTraerTodos = this._usuarioService.traerTodos();
+    this.filtrarArreglo();
+  }
+
+  filtrarArreglo() {
+    const consulta = {
+      or: [
+        {
+          nombre: {
+            contains: this.busquedaModelo
+          }
+        },
+        {
+          cedula: {
+            contains: this.busquedaModelo
+          }
+        }
+      ]
+    }
+    const consultaString = 'where=' + JSON.stringify(consulta)
+
+    const observableTraerTodos = this._usuarioService
+      .traerTodos(this.busquedaModelo != '' ? consultaString : '');
     observableTraerTodos
       .subscribe(
         (usuarios: any[]) => {
@@ -49,6 +75,7 @@ export class RutaListaUsuarioComponent implements OnInit {
           console.error('Error', error);
         }
       )
+
   }
 
 }

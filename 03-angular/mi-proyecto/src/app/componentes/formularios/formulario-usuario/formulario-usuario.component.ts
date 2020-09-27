@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-formulario-usuario',
@@ -7,12 +7,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormularioUsuarioComponent implements OnInit {
 
+  @Input()
+  nombreInput:string;
+
+  @Input()
+  cedulaInput:string;
+
+  @Input()
+ estadoCivilInput:string;
+
+  // Pasar información del componente hijo al padre:
+  @Output()
+  informacionValidada: EventEmitter<any> = new EventEmitter<any>()
+
   nombreModelo:string;
   cedulaModelo: string;
-  estadoCivilModelo: string
+  estadoCivilModelo: string;
+
+
   constructor() { }
 
   ngOnInit(): void {
+    if(this.nombreInput && this.cedulaInput && this.estadoCivilInput){
+      this.nombreModelo = this.nombreInput;
+      this.cedulaModelo = this.cedulaInput;
+      this.estadoCivilModelo = this.estadoCivilInput;
+    }
   }
 
   crearUsuario(formulario){
@@ -24,6 +44,11 @@ export class FormularioUsuarioComponent implements OnInit {
       // Primero llamamos al eventEmitter:
 
       console.log("LISTO")
+      this.informacionValidada.emit({
+        nombre: this.nombreModelo,
+        cedula: this.cedulaModelo,
+        estadoCivil: this.estadoCivilModelo
+      })
     }else{
       console.error("NO ES UN NÚMERO")
     }
