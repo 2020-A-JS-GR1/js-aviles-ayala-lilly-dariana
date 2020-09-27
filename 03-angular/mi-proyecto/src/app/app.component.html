@@ -1,20 +1,111 @@
-<h1>Mi aplicativo</h1>
-<h6>Titulo2</h6>
-<p>Párrafo</p>
-<ul> <!-- lista simple -->
-  <li>Papa</li>
-  <li>PCebolla</li>
-</ul>
-<ol> <!-- lista numerada -->
-  <li>A</li>
-  <li>B</li>
-  <li>C</li>
-</ol>
-<img src=
-"https://www.40defiebre.com/wp-content/uploads/2015/10/imagenes.png"
-  alt="">
+<!--<h1>Lista de películas</h1>-->
 
-<!-- Achor ancla -->
-<a href="https://www.google.com"></a>
+<!--&lt;!&ndash; Directiva - NGFOR &ndash;&gt;-->
+<!--<p *ngFor="let numero of arregloNumeros">-->
+<!--  {{numero}}</p>-->
+
+<!--&lt;!&ndash; Directiva ngIf &ndash;&gt;-->
+<!--<p *ngIf="false">-->
+<!--  OCULTO-->
+<!--</p>-->
+
+
+<!--<div *ngFor="let pelicula of arregloPeliculas">-->
+<!--<app-carta-pelicula-->
+
+<!--  [urlImagen]="pelicula.url"-->
+<!--  [descripcion]="pelicula.descripcion"-->
+<!--  [nombreBoton]="pelicula.nombrePelicula"-->
+<!--  (eventoDioClicEnBoton)="mensajeConsola($event)"-->
+<!--  (eventoDioClicEnImagen)="mensajeConsola($event)"-->
+<!--&gt;-->
+<!--</app-carta-pelicula>-->
+<!--</div>-->
+
+<!--<button (click)="crearUsuario()">-->
+<!--  Crear usuario-->
+<!--</button>-->
+
+<!--<button (click)="habilitado = !habilitado">-->
+<!--  {{habilitado ? 'Habilitado' : 'Deshabilitado'}}-->
+<!--</button>-->
+
+<!--<app-carta-pelicula *ngIf="habilitado">-->
+<!--</app-carta-pelicula>-->
+
+<!--<div *ngFor="let usuario of arregloUsuarios">-->
+<!--  {{usuario.nombre}}-->
+<!--</div>-->
+
 <br>
-<button>Mi primer botón</button>
+<ul>
+  <li>
+    <a [routerLink]="['inicio']">
+      Ir Inicio
+    </a>
+  </li>
+  <li>
+    <a [routerLink]="['login']">
+      Ir Login
+    </a>
+  </li>
+  <li *ngIf="_authService.estaAutenticado">
+    <a [routerLink]="['usuario']">
+      Usuarios
+    </a>
+  </li>
+
+</ul>
+
+<div>
+  <br/>
+  <button mat-button color="accent">
+    Boton material
+  </button>
+  <br/><br/>
+  <button type="button"
+          class="btn btn btn-outline-secondary mr-2"
+          placement="top"
+          ngbTooltip="Cuidado con verme feo">
+    Tooltip on top
+    <p
+      placement="bottom"
+      ngbTooltip="Otro mas">
+      Ejemplo
+    </p>
+  </button>
+  <br/><br/>
+  <p-button
+    label="Hola desde PrimeNG"
+    class="p-button-secondary">
+  </p-button>
+  <br>
+</div>
+
+<router-outlet>
+
+</router-outlet>
+
+<!--
+<br>
+<div *ngFor="let pelicula of arregloPeliculas">
+  <app-carta-pelicula
+
+    urlImagen="https://pbs.twimg.com/profile_images/727652546093813761/wsIRWa4h.jpg"
+    descripcion="Descripcion 1"
+    nombreBoton="Like 1"
+    (eventoDioClicEnBoton)="mensajeConsola($event)"
+    (eventoDioClicEnImagen)="mensajeConsola($event)"
+  >
+  </app-carta-pelicula>
+</div>-->
+
+<!--
+<br>
+<app-carta-pelicula
+  urlImagen="https://www.ecartelera.com/carteles/12500/12585/004_m.jpg"
+  descripcion="Descripcion 2"
+  nombreBoton="Like 2"
+>
+</app-carta-pelicula>
+-->

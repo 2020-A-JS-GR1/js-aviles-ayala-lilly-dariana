@@ -1,0 +1,36 @@
+<!--Property Binding-->
+<!-- Setear valores a propiedades de una etiqueta -->
+<!-- <img [src]="urlEjemploImagen" alt="">-->
+
+<!-- Interpolación -->
+<!-- Mostrar texto o algo visible en la interfaz  -->
+<!-- <a [href]="linkTextoEjemplo">-->
+<!-- <p>{{textoEjemplo}}</p>-->
+
+  <!-- Event Binding -->
+<!--  <button
+   (click)="ejemploFuncion()"
+   (blur)="eventoOnBlur()">
+   {{textoEjemplo}}
+ </button>-->
+
+
+ <!--Property Binding-->
+  <!-- Setear valores a propiedades de una etiqueta -->
+  <img [src]="urlImagen"
+       alt=""
+       (click)="ejecutarEventoDioClicImagen()">
+  <!-- Interpolación -->
+  <!-- Mostrar texto o algo visible en la interfaz  -->
+  <a [href]="linkTextoEjemplo">
+    <p>{{descripcion}}</p>
+
+    </a>
+
+    <!-- Event Binding -->
+    <button
+      (click)="ejecutarEventoDioClic()"
+      (blur)="eventoOnBlur()">
+      {{nombreBoton}}
+    </button>
+
