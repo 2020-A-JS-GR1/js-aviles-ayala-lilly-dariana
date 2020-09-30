@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html lang= "es">
+<body>
+<div class="container text-right">
+
+
+
+</div>
+
+<!--cabecera-->
+<header>
+
+  <!--MENU BOOTSTRAP 4-->
+  <div class=" header container-fluid ">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light col-xs-12 col-sm-4 col-md-3 col-lg-12">
+      <a class="navbar-brand" href="#">
+        <img src="../../../../assets/imagenes/logo/logo.jpg" alt="" title="ElBosque" width="220px" height="60px">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="navbar tam nav-link" [routerLink]="['']">INICIO<span class="sr-only">(current)</span></a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link" [routerLink]="['/Producto']" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              TIPO DE ANIMES
+            </a>
+
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/tipoProducto']">GÉNEROS DE ANIMES</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </nav>
+  </div>
+  <hr>
+
+<form [formGroup]='ProductoForm'>
+
+    <div class="form-group">
+        <input type="hidden" id="id" [ngModel]="producto?.id">
+
+        <input type="text" id="nombre" formControlName="nombre" placeholder="Nombre" [ngClass]="{ 'is-invalid': submited && f.nombre.errors}" [ngModel]="producto?.nombre">
+      <div *ngIf="(submited && f.nombre.errors)||  (f.nombre.touched && f.nombre.errors)">
+        <p class="error" *ngIf="f.nombre.errors.required"> Nombre Requerido</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+
+        <textarea type="textarea" id="descripcion" formControlName="descripcion" placeholder="Descripción" [ngClass]="{ 'is-invalid': submited && f.descripcion.errors}" [ngModel]="producto?.descripcion"></textarea>
+      <div *ngIf="(submited && f.descripcion.errors)||  (f.descripcion.touched && f.descripcion.errors)">
+        <p class="error" *ngIf="f.descripcion.errors.required"> Campo Requerido</p>
+      </div>
+    </div>
+    <div class="form-group">
+
+        <input type="text"  id="precio" minlength="4" formControlName="anio" placeholder="Anio" [ngClass]="{ 'is-invalid': submited && f.anio.errors}" [ngModel]="producto?.anio">
+      <div *ngIf="(submited && f.anio.errors)||  (f.anio.touched && f.anio.errors)">
+        <p class="error" *ngIf="f.anio.errors.required">Error: Campo requerido</p>
+        <p class="error" *ngIf="f.anio.errors.minlength">Error: Longitud minima 4</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Subtitulado</label>
+        <input type="checkbox" id="subtitulo" formControlName="subtitulo" placeholder="Subtitulo" [ngClass]="{ 'is-invalid': submited && f.subtitulo.errors}" [ngModel]="producto?.subtitulo">
+
+    </div>
+    <div class="form-group">
+      <label>Calificacion</label>
+      <select id="calificacion" formControlName="calificacion" [ngClass]="{ 'is-invalid': submited && f.calificacion.errors}" [ngModel]="producto?.calificacion">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+
+      <input type="text" id="imagen" formControlName="imagen" placeholder="URL de la imagen" [ngClass]="{ 'is-invalid': submited && f.imagen.errors}" [ngModel]="producto?.imagen">
+      <div *ngIf="(submited && f.imagen.errors)||  (f.imagen.touched && f.imagen.errors)">
+        <p class="error" *ngIf="f.imagen.errors.required"> Ingrese la URL de la imagen</p>
+      </div>
+    </div>
+
+  <div class="form-group">
+
+    <select formControlName="idTipo" [ngClass]="{ 'is-invalid': submited && f.idTipo.errors}" [ngModel]="producto?.idTipo">
+      <option value="null">Seleccione una opción</option>
+
+    </select>
+  </div>
+    <button type="button" class="btn btn-primary" (click)="onSubmit()">Enviar</button>
+   <button type="button" class="btn btn-secundary" (click)="cancel()">Cancelar</button>
+
+</form>
+</header>

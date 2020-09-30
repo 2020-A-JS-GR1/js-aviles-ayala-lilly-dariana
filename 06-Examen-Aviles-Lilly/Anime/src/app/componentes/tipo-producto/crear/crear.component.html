@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html lang= "es">
+<body>
+<div class="container text-right">
+
+
+
+</div>
+
+<!--cabecera-->
+<header>
+
+  <!--MENU BOOTSTRAP 4-->
+  <div class=" header container-fluid ">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light col-xs-12 col-sm-4 col-md-3 col-lg-12">
+      <a class="navbar-brand" href="#">
+        <img src="../../../../assets/imagenes/logo/logo.jpg" alt="" title="ElBosque" width="220px" height="60px">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="navbar tam nav-link" [routerLink]="['']">INICIO<span class="sr-only">(current)</span></a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link" [routerLink]="['/Producto']" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              TIPO DE ANIMES
+            </a>
+
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/tipoProducto']">GÉNEROS DE ANIMES</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </nav>
+  </div>
+  <hr>
+<form [formGroup]='tipoProductoForm'>
+
+            <div class="form-group">
+
+
+                <input type="text" id="categoria" formControlName="categoria" placeholder="Genero" [ngClass]="{ 'is-invalid': submited && f.categoria.errors}">
+              <div *ngIf="(submited && f.categoria.errors)||  (f.categoria.touched && f.categoria.errors)">
+                <p class="error" *ngIf="f.categoria.errors.required"> Campo Requerido</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+
+                <textarea type="textarea" id="descripcion" formControlName="descripcion" placeholder="Descripción" [ngClass]="{ 'is-invalid': submited && f.descripcion.errors}"></textarea>
+                <div *ngIf="(submited && f.descripcion.errors)||  (f.descripcion.touched && f.descripcion.errors)">
+              <p class="error" *ngIf="f.descripcion.errors.required"> Campo Requerido</p>
+            </div>
+            </div>
+
+      <div class="form-group">
+        <label>Activo</label>
+        <input type="checkbox" id="estado" formControlName="estado" placeholder="Estado" [ngClass]="{ 'is-invalid': submited && f.estado.errors}">
+<!--        <div *ngIf="submited && f.estado.errors" class="invalid-feedback">-->
+<!--          <div *ngIf="f.estado.errors.required">Seleccione estado</div>-->
+<!--        </div>-->
+      </div>
+
+  <div class="form-group">
+    <label>Apto para Todo Publico</label>
+    <input type="checkbox" id="publico" formControlName="publico" placeholder="Publico" [ngClass]="{ 'is-invalid': submited && f.publico.errors}">
+    <!--        <div *ngIf="submited && f.estado.errors" class="invalid-feedback">-->
+    <!--          <div *ngIf="f.estado.errors.required">Seleccione estado</div>-->
+    <!--        </div>-->
+  </div>
+
+            <button type="button" class="btn btn-primary" (click)="onSubmit()">Enviar</button>
+           <button type="button" class="btn btn-secundary" (click)="cancel()">Cancelar</button>
+
+</form>
+</header>
