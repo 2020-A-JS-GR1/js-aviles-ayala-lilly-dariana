@@ -1,0 +1,23 @@
+{"$$indexCreated":{"fieldName":"id","unique":true,"sparse":false}}
+{"createdAt":1601312096472,"updatedAt":1601390555738,"id":1,"categoria":"shojo","descripcion":"anime enfocado a las chicas","estado":true,"publico":true,"_id":1}
+{"createdAt":1601411535087,"updatedAt":1601411535087,"id":7,"categoria":"Isekai","descripcion":"Anime que gira entorno a una persona que es transportada en un universo paralelo","estado":true,"publico":true,"_id":7}
+{"createdAt":1601412426446,"updatedAt":1601412504393,"id":9,"categoria":"Yuri","descripcion":"Anime lesbico","estado":true,"publico":false,"_id":9}
+{"$$deleted":true,"_id":9}
+{"$$deleted":true,"_id":7}
+{"categoria":"shonen","descripcion":"anime orientado a chichos","estado":true,"publico":true,"createdAt":1601419516652,"updatedAt":1601419516652,"id":10,"_id":10}
+{"categoria":"Isekai","descripcion":"Iseakai anime que gira entorno a una persona que es transportada y/o atrapada en un universo paralelo","estado":true,"publico":true,"createdAt":1601420937439,"updatedAt":1601420937439,"id":11,"_id":11}
+{"categoria":"yuri","descripcion":"anime lesbico","estado":true,"publico":false,"createdAt":1601419516652,"updatedAt":1601420979950,"id":10,"_id":10}
+{"categoria":"yuri","descripcion":"anime lesbico","estado":true,"publico":false,"createdAt":1601419516652,"updatedAt":1601420997265,"id":10,"_id":10}
+{"$$deleted":true,"_id":11}
+{"categoria":"shonen","descripcion":"anime orientado a chicos","estado":true,"publico":true,"createdAt":1601419516652,"updatedAt":1601425703519,"id":10,"_id":10}
+{"categoria":"isekai","descripcion":"Iseakai anime que gira entorno a una persona que es transportada y/ ¿o atrapada en un universo paralelo","estado":true,"publico":true,"createdAt":1601425823694,"updatedAt":1601425823694,"id":12,"_id":12}
+{"categoria":"yuri","descripcion":"anime lesbico","estado":true,"publico":false,"createdAt":1601419516652,"updatedAt":1601425883135,"id":10,"_id":10}
+{"$$deleted":true,"_id":10}
+{"$$deleted":true,"_id":12}
+{"categoria":"Isekai","descripcion":"anime que gira entorno a una persona que es transportada y/o atrapada en un universo paralelo","estado":true,"publico":true,"createdAt":1601427964166,"updatedAt":1601427964166,"id":13,"_id":13}
+{"categoria":"Isekai","descripcion":"anime que gira entorno a una persona que es transportada y/o atrapada en un universo paralelo","estado":false,"publico":true,"createdAt":1601427964166,"updatedAt":1601427972168,"id":13,"_id":13}
+{"categoria":"isekai","descripcion":"anime que gira entorno a una persona que es transportada y/o atrapada en un universo paralelo","estado":false,"publico":true,"createdAt":1601427964166,"updatedAt":1601427982139,"id":13,"_id":13}
+{"categoria":"shonen","descripcion":"anime para chicos","estado":true,"publico":true,"createdAt":1601429246725,"updatedAt":1601429246725,"id":14,"_id":14}
+{"categoria":"yuri","descripcion":"anime lesbico","estado":true,"publico":false,"createdAt":1601429246725,"updatedAt":1601429299350,"id":14,"_id":14}
+{"$$deleted":true,"_id":14}
+{"$$deleted":true,"_id":1}
