@@ -58,12 +58,12 @@ const routes: Routes = [
     pathMatch: 'full'
   }
 ];
-  // {
-  //   path: '',
-  //   redirectTo: '**',
-  //   pathMatch: PageNotFoundComponent
-  //
-  // }
+// {
+//   path: '',
+//   redirectTo: '**',
+//   pathMatch: PageNotFoundComponent
+//
+// }
 
 
 
