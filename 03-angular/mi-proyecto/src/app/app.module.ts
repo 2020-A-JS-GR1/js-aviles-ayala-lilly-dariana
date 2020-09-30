@@ -49,7 +49,7 @@ import {ButtonModule} from "primeng/button";
     EstaLogeadoGuard,
     EsAdministradorGuard,
     EsSupervisorGuard
-   ],
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
